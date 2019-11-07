@@ -11,8 +11,7 @@ import { Counter } from '../counter';
 export class CounterComponent implements OnInit {
 
      @Input() position: number;
-      value: number;
-    value: Observable<Counter>
+      value: Counter;
     constructor(public counterService: CounterService) { }
 
     ngOnInit() {
@@ -22,7 +21,8 @@ export class CounterComponent implements OnInit {
     }
 
     increment() {
-        this.counterService.increment(this.position);
+       /* this.counterService.increment(this.position); */
+ this.counterService.increment().subscribe(counter => this.value = counter);
     }
 
 }

@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\counter",
+    "\\app\\home",
+    "\\app\\navbar"
+  ],
+  "SelectedNode": "\\app\\counter\\counter.component.ts",
+  "PreviewInSolutionExplorer": false
+}
