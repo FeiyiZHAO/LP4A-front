@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 export class CounterService {
     public initialValue = [12, 6, 78];
 
+
     constructor(private httpClient: HttpClient) { }
 
     reset() {

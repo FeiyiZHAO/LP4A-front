@@ -4,8 +4,9 @@
     "\\app",
     "\\app\\counter",
     "\\app\\home",
-    "\\app\\navbar"
+    "\\app\\navbar",
+    "\\app\\profile"
   ],
-  "SelectedNode": "\\app\\counter\\counter.component.ts",
+  "SelectedNode": "\\app\\app-routing.module.ts",
   "PreviewInSolutionExplorer": false
 }
