@@ -3,10 +3,11 @@
     "",
     "\\app",
     "\\app\\counter",
+    "\\app\\counter-detail",
     "\\app\\home",
     "\\app\\navbar",
     "\\app\\profile"
   ],
-  "SelectedNode": "\\app\\app-routing.module.ts",
+  "SelectedNode": "\\app\\app.module.ts",
   "PreviewInSolutionExplorer": false
 }

@@ -5,6 +5,8 @@ import { AuthGuard } from './auth.guard';
 
 import { HomeComponent } from './home/home.component';
 
+import { CounterDetailComponent }  from './counter-detail/counter-detail.component';
+
 const routes: Routes = [
 {    path: '',
     component: HomeComponent,
@@ -12,9 +14,14 @@ const routes: Routes = [
 },
 {    path: 'profile',
     component: ProfileComponent,
-    pathMatch: 'full',
     canActivate: [AuthGuard]
-}];
+},
+
+{     path: 'counter/:id', 
+    component: CounterDetailComponent
+}
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

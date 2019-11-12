@@ -10,20 +10,31 @@ import { Counter } from '../counter';
 })
 export class CounterComponent implements OnInit {
 
-     @Input() position: number;
-      value: Counter;
+    @Input() id : number;
+  name: string;
+  value: number;
+
     constructor(public counterService: CounterService) { }
 
     ngOnInit() {
-    console.log("call counter")
-    this.counterService.getCounterValue(this.position)
-          .subscribe(counter => this.value =  counter)
-    }
 
-    increment() {
-       /* this.counterService.increment(this.position); */
- this.counterService.increment().subscribe(counter => this.value = counter);
-    }
-
+    this.counterService.getCounterValue(this.id)
+    .subscribe(counter => {
+              this.value =  counter.value;
+              this.name = counter.name;
+              this.id=counter.id;
+    });
 }
+
+   increment() {
+       this.counterService.increment(this.id)
+       .subscribe(counter =>{
+       this.value=counter.value;
+       });
+    }
+
+
+      }
+    
+
 
