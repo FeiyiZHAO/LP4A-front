@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CounterService } from '../counter.service';
 import {Location} from '@angular/common';
 
+
 @Component({
   selector: 'app-counter-detail',
   templateUrl: './counter-detail.component.html',
@@ -23,9 +24,12 @@ export class CounterDetailComponent implements OnInit {
   }
 
   getCounter() : void{
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.counterService.getCounterValue(id)
-      .subscribe(counter => this.counter = counter);
+    this.route.params.subscribe(
+      params => {
+        this.counterService.getCounterValue(params['id'])
+          .subscribe(counter => this.counter = counter);
+      }
+    );
   }
 
   increment(){

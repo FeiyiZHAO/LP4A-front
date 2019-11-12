@@ -10,7 +10,7 @@
       <a mat-list-item routerLink="profile" *ngIf="auth.loggedIn">Profile</a>
       <a mat-list-item [matMenuTriggerFor]="countersMenu">Counters List<mat-icon>arrow_drop_down</mat-icon></a>
       <mat-menu #countersMenu="matMenu">
-          <a mat-menu-item *ngFor="let counter of counters" routerLink="/counter/{{ counter.id }}">NO.{{ counter.id }}  {{ counter.name }}</a>
+          <a mat-menu-item *ngFor="let counter of counters" routerLink="/counter/{{ counter.id }}">NO.{{ counter.id }}  {{ counter.name | titlecase  }}</a>
       </mat-menu>
       <button (click)="auth.login()" *ngIf="!auth.loggedIn">Log In</button>
       <button (click)="auth.logout()" *ngIf="auth.loggedIn">Log Out</button>
