@@ -18,6 +18,7 @@ import { HttpClientModule }    from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ProfileComponent } from './profile/profile.component';
 import { CounterDetailComponent } from './counter-detail/counter-detail.component';
+import { ActionCableService } from 'angular2-actioncable';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { CounterDetailComponent } from './counter-detail/counter-detail.componen
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ActionCableService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
