@@ -13,7 +13,7 @@ import { ActionCableService, Channel } from 'angular2-actioncable';
 
 export class CounterService {
   public initialValue = [12, 5, 7];
-  public positionCounter = [12, 5, 7];
+
   subscription: Subscription;
 
   private counterObservable:Map<number, Observable<Counter>> = new Map();
@@ -25,11 +25,15 @@ export class CounterService {
     // Open a connection and obtain a reference to the channel
     const channel: Channel = this.cableService
     .cable('wss://lp4asgadot.herokuapp.com/cable')
-    .channel('CountersChannel ', {});
-
+    .channel('CountersChannel', {});
       // Subscribe to incoming messages
       this.subscription = channel.received().subscribe(message => {
-          console.log(message)
+        console.log(message, this.counterObservable[message.id]);
+
+        if(this.counterObservable.has(message.id)) {
+          console.log("emit");
+          this.counterObservable[message.id].emit({id: message.id, name: message.name, value:message.value})
+        }
       });
   }
   reset() {
